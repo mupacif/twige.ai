@@ -3,76 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Education Organization</title>
+    <title>AI Education Organization - Empowering the Next Industrial Revolution</title>
+    <meta name="description" content="Leading AI education organization specializing in LLM integration, agentic workflows, deep learning, and AI infrastructure. Partner with governments and companies for the next industrial revolution.">
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="AI Education Organization - Empowering the Next Industrial Revolution">
+    <meta property="og:description" content="Leading AI education organization specializing in LLM integration, agentic workflows, deep learning, and AI infrastructure.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mupacif.github.io/twige.ai/">
+    <meta property="og:image" content="https://mupacif.github.io/twige.ai/og-image.jpg">
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Education Organization - Empowering the Next Industrial Revolution">
+    <meta name="twitter:description" content="Leading AI education organization specializing in LLM integration, agentic workflows, deep learning, and AI infrastructure.">
+    <meta name="twitter:image" content="https://mupacif.github.io/twige.ai/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2300aaff'/><text x='50%' y='50%' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='30' fill='white'>AI</text></svg>">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
             <div class="logo">
-                <!-- Placeholder for logo -->
-                <a href="#">Your Logo</a>
+                <!-- Logo placeholder with easy replacement support -->
+                <a href="#" aria-label="AI Education Organization - Home">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40'><rect width='120' height='40' fill='%2300aaff' rx='5'/><text x='60' y='25' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' fill='white' font-weight='bold'>AI EDU</text></svg>" alt="AI Education Organization Logo" width="120" height="40">
+                </a>
             </div>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul role="menubar">
+                <li role="none"><a href="#about" role="menuitem">About Us</a></li>
+                <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero">
-        <div class="hero-content">
-            <h1>Welcome to the Future of AI Education</h1>
-            <p>Empowering organizations to navigate the next industrial revolution.</p>
-            <a href="#services" class="cta-button">Learn More</a>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are an organization specialized in teaching AI, LLM, agentic workflow, deep learning, local/remote infrastructure, data analysis, and more. We aim to work with governments, companies, and organizations to help them enter the next industrial revolution.</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>AI Strategy & Consulting</li>
-            <li>Large Language Model (LLM) Integration</li>
-            <li>Agentic Workflow Development</li>
-            <li>Deep Learning Solutions</li>
-            <li>Custom AI Model Training</li>
-            <li>Cloud & On-Prem AI Infrastructure</li>
-            <li>Data Analysis & Insights</li>
-            <li>Corporate AI Training Programs</li>
-            <li>Government AI Initiative Support</li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form action="#" method="post"> <!-- Added action and method attributes -->
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+    <main role="main">
+        <section id="hero" aria-labelledby="hero-heading">
+            <div class="hero-content">
+                <h1 id="hero-heading">Welcome to the Future of AI Education</h1>
+                <p>Empowering organizations to navigate the next industrial revolution.</p>
+                <a href="#services" class="cta-button" aria-describedby="hero-heading">Learn More</a>
             </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <div>
-                <button type="submit" class="cta-button">Send Message</button>
-            </div>
-        </form>
-    </section>
+        </section>
 
-    <footer>
-        <p>&copy; 2023 AI Education Organization. All rights reserved.</p>
+        <section id="about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Us</h2>
+            <p>We are an organization specialized in teaching AI, LLM, agentic workflow, deep learning, local/remote infrastructure, data analysis, and more. We aim to work with governments, companies, and organizations to help them enter the next industrial revolution.</p>
+        </section>
+
+        <section id="services" aria-labelledby="services-heading">
+            <h2 id="services-heading">Our Services</h2>
+            <ul role="list">
+                <li>AI Strategy & Consulting</li>
+                <li>Large Language Model (LLM) Integration</li>
+                <li>Agentic Workflow Development</li>
+                <li>Deep Learning Solutions</li>
+                <li>Custom AI Model Training</li>
+                <li>Cloud & On-Prem AI Infrastructure</li>
+                <li>Data Analysis & Insights</li>
+                <li>Corporate AI Training Programs</li>
+                <li>Government AI Initiative Support</li>
+            </ul>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Us</h2>
+            <form action="#" method="post" aria-label="Contact form">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </div>
+            </form>
+            <div id="form-feedback" role="status" aria-live="polite" class="form-feedback"></div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; <span id="current-year">2023</span> AI Education Organization. All rights reserved.</p>
     </footer>
+
+    <!-- Scroll to top button -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
+        ↑
+    </button>
 
     <script src="script.js"></script>
 </body>
