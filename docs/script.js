@@ -1,6 +1,9 @@
 // Futuristic AI Education Landing Page Interactive Features
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize page
+    initializePage();
+    
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('header nav a[href^="#"]');
     navLinks.forEach(link => {
@@ -77,38 +80,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Header background opacity on scroll
     const header = document.querySelector('header');
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', throttle(function() {
         const scrolled = window.pageYOffset;
         const opacity = Math.min(scrolled / 300, 0.95);
         header.style.background = `rgba(20, 20, 30, ${0.1 + opacity * 0.7})`;
-    });
+    }, 10));
 
-    // Parallax effect for hero section
+    // Parallax effect for hero section (performance optimized)
     const hero = document.querySelector('#hero');
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', throttle(function() {
         const scrolled = window.pageYOffset;
-        const parallax = scrolled * 0.5;
+        const parallax = scrolled * 0.3;
         hero.style.transform = `translateY(${parallax}px)`;
-    });
+    }, 10));
 
     // Add glowing cursor effect
-    const glowCursor = document.createElement('div');
-    glowCursor.style.cssText = `
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        background: radial-gradient(circle, rgba(0,212,255,0.3) 0%, transparent 70%);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        transition: transform 0.1s ease;
-    `;
-    document.body.appendChild(glowCursor);
+    if (window.innerWidth > 768) { // Only on larger screens
+        const glowCursor = document.createElement('div');
+        glowCursor.style.cssText = `
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(0,212,255,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        `;
+        document.body.appendChild(glowCursor);
 
-    document.addEventListener('mousemove', function(e) {
-        glowCursor.style.left = e.clientX - 10 + 'px';
-        glowCursor.style.top = e.clientY - 10 + 'px';
-    });
+        document.addEventListener('mousemove', throttle(function(e) {
+            glowCursor.style.left = e.clientX - 10 + 'px';
+            glowCursor.style.top = e.clientY - 10 + 'px';
+        }, 5));
+    }
 
     // Service card interaction enhancement
     const serviceCards = document.querySelectorAll('.service-card');
@@ -134,7 +139,9 @@ document.addEventListener('DOMContentLoaded', function() {
             this.appendChild(ripple);
             
             setTimeout(() => {
-                ripple.remove();
+                if (ripple.parentNode) {
+                    ripple.remove();
+                }
             }, 600);
         });
     });
@@ -158,4 +165,51 @@ document.addEventListener('DOMContentLoaded', function() {
             heroContent.classList.add('active');
         }
     }, 500);
+
+    // Form submission enhancement
+    const contactForm = document.querySelector('#contact form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const button = this.querySelector('.cta-button');
+            const originalText = button.textContent;
+            
+            // Animate button
+            button.style.background = 'linear-gradient(45deg, #00ff88, #00cc66)';
+            button.textContent = 'Sending...';
+            
+            // Simulate form submission
+            setTimeout(() => {
+                button.style.background = 'linear-gradient(45d, #00d4ff, #0099cc)';
+                button.textContent = 'Message Sent!';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            }, 1500);
+        });
+    }
 });
+
+// Utility functions
+function initializePage() {
+    // Add loading animation
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+}
+
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
