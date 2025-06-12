@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Education Organization</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
             <div class="logo">
                 <!-- Placeholder for logo -->
-                <a href="#">Your Logo</a>
+                <a href="#" aria-label="AI Education Organization Home">TWIGE.AI</a>
             </div>
             <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" aria-label="Learn about us">About Us</a></li>
+                <li><a href="#services" aria-label="View our services">Services</a></li>
+                <li><a href="#contact" aria-label="Contact us">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -29,45 +32,49 @@
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are an organization specialized in teaching AI, LLM, agentic workflow, deep learning, local/remote infrastructure, data analysis, and more. We aim to work with governments, companies, and organizations to help them enter the next industrial revolution.</p>
+    <section id="about" class="glass-section">
+        <div class="glass-card">
+            <h2>About Us</h2>
+            <p>We are an organization specialized in teaching AI, LLM, agentic workflow, deep learning, local/remote infrastructure, data analysis, and more. We aim to work with governments, companies, and organizations to help them enter the next industrial revolution.</p>
+        </div>
     </section>
 
-    <section id="services">
+    <section id="services" class="glass-section">
         <h2>Our Services</h2>
-        <ul>
-            <li>AI Strategy & Consulting</li>
-            <li>Large Language Model (LLM) Integration</li>
-            <li>Agentic Workflow Development</li>
-            <li>Deep Learning Solutions</li>
-            <li>Custom AI Model Training</li>
-            <li>Cloud & On-Prem AI Infrastructure</li>
-            <li>Data Analysis & Insights</li>
-            <li>Corporate AI Training Programs</li>
-            <li>Government AI Initiative Support</li>
-        </ul>
+        <div class="services-grid">
+            <div class="service-card glass-card">AI Strategy & Consulting</div>
+            <div class="service-card glass-card">Large Language Model (LLM) Integration</div>
+            <div class="service-card glass-card">Agentic Workflow Development</div>
+            <div class="service-card glass-card">Deep Learning Solutions</div>
+            <div class="service-card glass-card">Custom AI Model Training</div>
+            <div class="service-card glass-card">Cloud & On-Prem AI Infrastructure</div>
+            <div class="service-card glass-card">Data Analysis & Insights</div>
+            <div class="service-card glass-card">Corporate AI Training Programs</div>
+            <div class="service-card glass-card">Government AI Initiative Support</div>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <form action="#" method="post"> <!-- Added action and method attributes -->
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <div>
-                <button type="submit" class="cta-button">Send Message</button>
-            </div>
-        </form>
+    <section id="contact" class="glass-section">
+        <div class="glass-card">
+            <h2>Contact Us</h2>
+            <form action="#" method="post"> <!-- Added action and method attributes -->
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="cta-button">Send Message</button>
+                </div>
+            </form>
+        </div>
     </section>
 
     <footer>
